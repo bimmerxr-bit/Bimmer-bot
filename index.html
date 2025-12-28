@@ -1,0 +1,35 @@
+<!-- WhatsApp Bot Button -->
+<div class="whatsapp-bot">
+    <button id="whatsapp-toggle" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i>
+    </button>
+    <div class="whatsapp-chat">
+        <div class="chat-header">
+            <h4><i class="fab fa-whatsapp"></i> BMW Assistant</h4>
+            <button class="close-chat">&times;</button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot">
+                <div class="avatar">B</div>
+                <div class="content">
+                    <p>Hello! I'm your BMW Assistant. How can I help you today?</p>
+                    <span class="time">Just now</span>
+                </div>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chat-input" placeholder="Type your message...">
+            <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+        <div class="quick-replies">
+            <button class="quick-btn" data-msg="Show me BMW models">Models</button>
+            <button class="quick-btn" data-msg="Book a test drive">Test Drive</button>
+            <button class="quick-btn" data-msg="Contact sales">Contact</button>
+        </div>
+    </div>
+</div>
+
+<!-- Admin Panel Link (hidden by default) -->
+<a href="bot-dashboard.html" class="admin-link" id="admin-link">
+    <i class="fas fa-cog"></i> Bot Admin
+</a>
