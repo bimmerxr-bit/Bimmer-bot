@@ -1,0 +1,382 @@
+/* WhatsApp Bot Styles */
+.whatsapp-bot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.whatsapp-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #25D366;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-chat {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 350px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: none;
+    overflow: hidden;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.whatsapp-chat.active {
+    display: block;
+}
+
+.chat-header {
+    background: #25D366;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h4 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.close-chat {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-messages {
+    height: 300px;
+    overflow-y: auto;
+    padding: 15px;
+    background: #f0f0f0;
+}
+
+.message {
+    display: flex;
+    margin-bottom: 15px;
+    max-width: 80%;
+}
+
+.message.user {
+    margin-left: auto;
+    flex-direction: row-reverse;
+}
+
+.message.bot .avatar {
+    background: #25D366;
+}
+
+.message.user .avatar {
+    background: #0066b3;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.message.user .avatar {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+.content {
+    background: white;
+    padding: 10px 15px;
+    border-radius: 18px;
+    position: relative;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.message.user .content {
+    background: #DCF8C6;
+}
+
+.content p {
+    margin: 0 0 5px 0;
+}
+
+.time {
+    font-size: 0.7rem;
+    color: #999;
+    display: block;
+    text-align: right;
+}
+
+.chat-input {
+    display: flex;
+    padding: 15px;
+    background: white;
+    border-top: 1px solid #eee;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.chat-input button {
+    background: #25D366;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.chat-input button:hover {
+    background: #1da851;
+}
+
+.quick-replies {
+    display: flex;
+    gap: 10px;
+    padding: 10px 15px;
+    background: #f9f9f9;
+    border-top: 1px solid #eee;
+    flex-wrap: wrap;
+}
+
+.quick-btn {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #333;
+}
+
+.quick-btn:hover {
+    background: #25D366;
+    color: white;
+    border-color: #25D366;
+}
+
+.admin-link {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #333;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    z-index: 1001;
+    display: none;
+}
+
+.admin-link.show {
+    display: block;
+}
+
+.admin-link:hover {
+    background: #0066b3;
+}
+
+/* Dashboard Styles */
+.dashboard {
+    padding: 100px 0 50px;
+    min-height: 100vh;
+    background: #f8f9fa;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.dashboard-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-card h3 {
+    color: #0066b3;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #25D366;
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.conversation-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.conversation-item {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.conversation-item:hover {
+    background: #f8f9fa;
+}
+
+.conversation-item.active {
+    background: #e8f4ff;
+    border-left: 4px solid #0066b3;
+}
+
+.message-log {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.bot-config form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.bot-config input,
+.bot-config textarea,
+.bot-config select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.bot-config textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.btn-save {
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-save:hover {
+    background: #1da851;
+}
+
+.btn-delete {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.btn-delete:hover {
+    background: #c82333;
+}
+
+/* Responsive for dashboard */
+@media (max-width: 768px) {
+    .whatsapp-chat {
+        width: calc(100vw - 40px);
+        right: 20px;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
